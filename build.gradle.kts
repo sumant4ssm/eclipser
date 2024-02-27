@@ -1,11 +1,11 @@
 plugins {
     id("java")
-    id("org.jetbrains.intellij") version "1.16.0"
-    id("org.jetbrains.kotlin.jvm") version "1.9.10"
+    id("org.jetbrains.intellij") version "1.17.2"
+    id("org.jetbrains.kotlin.jvm") version "1.9.22"
 }
 
 group = "org.jetbrains"
-version = "0.9.3"
+version = "0.9.4"
 
 repositories {
     mavenCentral()
@@ -17,11 +17,11 @@ java {
 
 // See https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-    version.set("2023.2")
+    version.set("IC-2023.3")
     plugins.set(listOf(
         "com.intellij.java",
         "org.jetbrains.idea.maven",
-        "AntSupport",
+        "AntSupport"
     ))
 }
 
@@ -32,7 +32,7 @@ tasks {
 
     patchPluginXml {
         version.set("${project.version}")
-        sinceBuild.set("232")
+        sinceBuild.set("233")
     }
 
     compileKotlin {

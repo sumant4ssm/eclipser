@@ -1,15 +1,13 @@
 <!--suppress XmlUnboundNsPrefix -->
 <idea-plugin>
-    <id>com.kukido.eclipser</id>
-    <name>Eclipser</name>
-    <version>0.9.4</version>
-    <vendor email="mclovin@kukido.com" url="https://github.com/kukido/eclipser">Kukido</vendor>
-    <depends>org.jetbrains.idea.maven</depends>
-    <depends>com.intellij.modules.java</depends>
-    <depends>AntSupport</depends>
-
-    <description><![CDATA[
-        Eclipser converts Eclipse launch configurations into IntelliJ IDEA configurations:
+  <id>com.kukido.eclipser</id>
+  <name>Eclipser</name>
+  <version>0.9.4</version>
+  <vendor email="mclovin@kukido.com" url="https://github.com/kukido/eclipser">Kukido</vendor>
+  <depends>org.jetbrains.idea.maven</depends>
+  <depends>com.intellij.modules.java</depends>
+  <depends>AntSupport</depends>
+  <description><![CDATA[Eclipser converts Eclipse launch configurations into IntelliJ IDEA configurations:
         <ul>
             <li>Local Java application Eclipse launcher into Application run configuration</li>
             <li>Program launch Eclipse launcher into external tool in Tools menu</li>
@@ -18,11 +16,8 @@
             <li>Ant launch configuration into Ant target run configuration</li>
         </ul>
         For limitations, known issues and support please refer to plugin wiki:
-            <a href="https://github.com/kukido/eclipser/wiki">https://github.com/kukido/eclipser/wiki</a>
-    ]]></description>
-
-    <change-notes><![CDATA[
-        <dl>
+            <a href="https://github.com/kukido/eclipser/wiki">https://github.com/kukido/eclipser/wiki</a>]]></description>
+  <change-notes><![CDATA[<dl>
             <dt>0.9.4</dt>
             <dd>- updated IntelliJ version
             <dt>0.9.3</dt>
@@ -93,29 +88,18 @@
             <dd>- updates for 12.1 version of IDEA</dd>
             <dt>0.1</dt>
             <dd>- initial release (beta)</dd>
-        </dl>
-    ]]></change-notes>
-
-    <!-- please see https://jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="232"/>
-
-    <actions>
-        <action id="eclipser" class="com.kukido.eclipser.EclipserAction" text="Convert with Eclipser"
-                description="Convert Eclipse run configuration file.">
-            <add-to-group group-id="ProjectViewPopupMenuRunGroup" anchor="last"/>
-            <add-to-group group-id="CommanderPopupMenu" anchor="last"/>
-            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
-        </action>
-    </actions>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <fileType
-                name="Eclipser"
-                implementationClass="com.kukido.eclipser.EclipserFileType"
-                fieldName="INSTANCE"
-                language="XML"
-                extensions="launch"
-        />
-        <syntaxHighlighter key="Eclipser" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
-    </extensions>
+        </dl>]]></change-notes>
+  <!-- please see https://jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="233" until-build="233.*" />
+  <actions>
+    <action id="eclipser" class="com.kukido.eclipser.EclipserAction" text="Convert with Eclipser" description="Convert Eclipse run configuration file.">
+      <add-to-group group-id="ProjectViewPopupMenuRunGroup" anchor="last" />
+      <add-to-group group-id="CommanderPopupMenu" anchor="last" />
+      <add-to-group group-id="EditorPopupMenu" anchor="last" />
+    </action>
+  </actions>
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="Eclipser" implementationClass="com.kukido.eclipser.EclipserFileType" fieldName="INSTANCE" language="XML" extensions="launch" />
+    <syntaxHighlighter key="Eclipser" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter" />
+  </extensions>
 </idea-plugin>
